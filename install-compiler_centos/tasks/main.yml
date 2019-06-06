@@ -1,0 +1,15 @@
+---
+- name: Install gcc compiler on Centos
+  become: true
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - '@Development tools'
+      - readline-devel
+      - python-devel
+      - libselinux-devel
+      - openssl-devel
+
+#- debug:
+#    msg: TRACE ansible_user_dir = {{ ansible_user_dir }}

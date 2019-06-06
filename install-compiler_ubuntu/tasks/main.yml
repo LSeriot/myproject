@@ -1,0 +1,23 @@
+---
+- name: Update repos on Ubuntu
+  become: true
+  apt:
+    update_cache: true
+- name: Install gcc compiler on Ubuntu
+  become: true
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - build-essential
+      - libssl-dev
+      - python-dev
+      - libreadline-dev
+      - libselinux-dev
+      - zlib1g-dev
+      - bison
+      - flex
+
+
+#- debug:
+#    msg: TRACE ansible_user_dir = {{ ansible_user_dir }}

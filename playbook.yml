@@ -5,4 +5,6 @@
   roles:
 #    - { role: nginx-centos, when: ansible_distribution == 'CentOS' }
 #    - { role: nginx-ubuntu, when: ansible_distribution == 'Ubuntu' }
-    - { role: install-postgres-source }
+#    - { role: install-postgres-source }
+    - { role: install-compiler_centos, when: ansible_distribution == 'CentOS' }
+    - { role: install-compiler_ubuntu, when: ansible_distribution == 'Ubuntu' }
