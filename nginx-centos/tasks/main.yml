@@ -1,0 +1,17 @@
+---
+- name: Install yum package epel
+  yum:
+    name: epel-release
+    state: present
+- name: Install yum package nginx
+  yum:
+    name: nginx
+    state: present
+- name: Insert index page
+  template:
+    src: index.html
+    dest: /usr/share/nginx/html/index.html
+- name: Start nginx
+  service:
+    name: nginx
+    state: started
