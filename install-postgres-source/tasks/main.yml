@@ -1,0 +1,10 @@
+---
+- name: Downlaod the latest release from postgres
+  unarchive:
+    src: https://github.com/postgres/postgres/archive/REL_11_3.tar.gz
+    dest: /home/{{ ansible_ssh_user }}/
+    remote_src: yes
+
+#- debug:
+### become: true => ansible_user_dir = /root
+#    msg: TRACE ansible_user_dir = {{ ansible_user_dir }}
